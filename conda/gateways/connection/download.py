@@ -335,7 +335,7 @@ class TmpDownload:
         self.verbose = verbose
 
     def __enter__(self):
-        if "://" not in self.url:
+        if "file://" in self.url or "://" not in self.url:
             # if we provide the file itself, no tmp dir is created
             self.tmp_dir = None
             return self.url
